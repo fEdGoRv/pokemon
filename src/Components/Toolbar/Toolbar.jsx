@@ -1,17 +1,18 @@
-import React from 'react'
+
 import { NavLink } from "react-router-dom"
-import { Flex, Text, Spacer } from '@chakra-ui/react'
+import { Flex, Text, Spacer, Container, HStack } from '@chakra-ui/react'
 import logo from "../../Assets/Pokebola-pokeball.jpg"
 
 export const Toolbar = () => {
     return (
-        <Flex bg="lightgrey">
-            <Flex verticalAlign="center">
-                <img src={logo} alt="bola" width={100} />
-                <Text fontSize='5xl' lineHeight="100px">Tu sitio de pokemon!</Text>
-            </Flex>
+        <Flex>
+            <img src={logo} alt="bola" width={100} />
             <Spacer />
-            <Flex>
+            <NavLink to="/">
+                <Text lineHeight="100px" fontSize='5xl' >Your pokemon website</Text>
+            </NavLink>
+            <Spacer />
+            <HStack>
                 <NavLink to="/categoty/Fire" >
                     <Text fontSize='5xl' m={5} >Fire</Text>
                 </NavLink>
@@ -24,8 +25,9 @@ export const Toolbar = () => {
                 <NavLink to="category/water">
                     <Text fontSize='5xl' m={5} >Water</Text>
                 </NavLink>
-            </Flex>
+            </HStack>
         </Flex>
+
 
     )
 }
